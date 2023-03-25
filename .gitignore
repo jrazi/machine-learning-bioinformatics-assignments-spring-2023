@@ -137,3 +137,6 @@ ui-tests/playwright-report
 .pnp.*
 ui-tests/.yarn/*
 ui-tests/.pnp.*
+
+.temp_ext
+*.temp_ext
