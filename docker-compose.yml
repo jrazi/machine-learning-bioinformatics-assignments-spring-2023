@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  mljupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: jupyter-xgboost:a2
+    container_name: jupyter-xgboost
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - GRANT_SUDO=yes
+      - notebook_dir=/home/jovyan/work
+    working_dir: /home/jovyan/work
+    ports:
+      - "8888:8888"
+      - "8822:22/tcp"
+    volumes:
+      - ./:/home/jovyan/work/
+      - mlbv:/tf/
+      - condenv:/home/jovyan/.conda/envs/
+      - codeserver:/home/jovyan/.vscode-server/
+      - vscode:/home/jovyan/.vscode/
+volumes:
+  mlbv:
+  condenv:
+  codeserver:
+  vscode:
