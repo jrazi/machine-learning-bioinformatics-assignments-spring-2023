@@ -14,7 +14,7 @@ services:
     working_dir: /home/jovyan/work
     ports:
       - "8888:8888"
-      - "8822:22/tcp"
+      # - "8822:22/tcp"
     volumes:
       - ./:/home/jovyan/work/
       - mlbv:/tf/
